@@ -1,0 +1,64 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<script src="/JS/scroll.js"></script>
+<style>
+  .taxgst {
+    display: none;
+  }
+    .tax-toggle{
+      border: 1px solid black;
+      padding: 0.8rem;
+      border-radius: 2rem;
+    }
+  
+</style>
+<body>
+
+    <!-- Scroll Bar -->
+    <%- include("../includes/scroll.ejs") %>
+
+    <!-- <div class="tax-toggle">
+      <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Display Total After Taxes</label>
+      </div>
+    </div> -->
+    
+    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 mt-3">
+        <% for(let listing of data){ %>
+            <a href="/listings/<%= listing._id %>" class="listing-links">
+                <div class="card col listing-card" >
+                    <img src="<%= listing.image.url %>" class="card-img-top" alt="Listing_image" style="height: 20rem;">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                      <p class="card-text">
+                        <b><%= listing.title %></b> <br>
+                        &#8377;<%= listing.price.toLocaleString("en-IN") %>/night
+                        <i class="taxgst">&nbsp;&nbsp; +18% Gst.</i>
+                    </p>
+                    </div>
+                  </div>
+            </a>
+              <% } %>
+    </div>
+    
+</body>
+
+<script>
+  let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+  
+  // taxgst.addEventListener("click", ()=>{
+  //   console.log("T clicked");
+  // });
+
+  taxSwitch.addEventListener("click", ()=>{
+    let taxgst = document.getElementsByClassName("taxgst");
+    for(let gst of taxgst){
+      if(gst.style.display != "inline"){
+        gst.style.display = "inline";
+      }else{
+        gst.style.display = "none";
+      }
+    }
+    console.log("Clicked");
+  });
+</script>

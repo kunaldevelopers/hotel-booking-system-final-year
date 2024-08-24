@@ -1,0 +1,138 @@
+<form action="/listings/category" method="get">
+  <div class="filter-container">
+    <button class="scroll-button left" type="button" onclick="scrollLeftContainer()">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    
+    <div id="filters">
+      <div class="tax-toggle">
+      <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Taxes</label>
+      </div>
+    </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+      </div>
+      
+      <div class="filter">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Iconic-City</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-mountain"></i></div>
+        <p>Mountains</p>
+      </div>
+      
+      <div class="filter">
+        <div><i class="fa-brands fa-fort-awesome"></i></div>
+        <p>Castles</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-person-swimming"></i></div>
+        <p>Swimming-Pools</p>
+      </div>
+      
+      <div class="filter">
+        <div><i class="fa-solid fa-campground"></i></div>
+        <p>Camping</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-cow"></i></div>
+        <p>Farms</p>
+      </div>
+      
+      <div class="filter">
+        <div><i class="fa-solid fa-snowflake"></i></div>
+        <p>Arctic</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-motorcycle"></i></div>
+        <p>Riding</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-basketball-ball"></i></div>
+        <p>Sports</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-laptop-code"></i></div>
+        <p>Technology</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-plane"></i></div>
+        <p>Travel</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-music"></i></div>
+        <p>Music</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p>Room</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-book"></i></div>
+        <p>Books</p>
+      </div>
+      
+      <div class="filter">
+        <div><i class="fa-solid fa-paintbrush"></i></div>
+        <p>Art</p>
+      </div>
+      
+    </div>
+    
+    <button class="scroll-button right" type="button" onclick="scrollRightContainer()">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+</form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select all .filter div elements
+    const filters = document.querySelectorAll('#filters .filter');
+
+    filters.forEach(function(filter) {
+      // Add click event listener to each filter div
+      filter.addEventListener('click', function() {
+        // Find the form element
+        const form = filter.closest('form');
+
+        // Create a new input element
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'category';
+        input.value = filter.querySelector('p').textContent;
+
+        // Append the input to the form
+        form.appendChild(input);
+
+        // Submit the form
+        form.submit();
+      });
+    });
+  });
+
+  function scrollLeftContainer() {
+    const container = document.getElementById('filters');
+    container.scrollBy({ left: -200, behavior: 'smooth' });
+  }
+
+  function scrollRightContainer() {
+    const container = document.getElementById('filters');
+    container.scrollBy({ left: 200, behavior: 'smooth' });
+  }
+</script>
