@@ -1,4 +1,3 @@
-```markdown
 # Hotel Booking System - Final Year Project
 
 Welcome to the **Hotel Booking System** project, a complete and scalable solution designed for final-year students who want to build a full-stack web application. This project leverages the powerful MERN stack (MongoDB, Express.js, React.js, Node.js) and includes key features like user authentication, hotel listings, reviews, and more. It's a perfect project to showcase your web development skills.
@@ -98,8 +97,3 @@ If you have any questions or need further information, feel free to contact me:
 - **Email**: [kunalkprnc@gmail.com](mailto:kunalkprnc@gmail.com)
 - **LinkedIn**: [Kunal Kumar Pandit](https://www.linkedin.com/in/kunalkumarpandit/)
 - **GitHub**: [kunaldevelopers](https://github.com/kunaldevelopers)
-
----
-
-*This project is an excellent choice for students looking to create a robust final-year project. Download, explore, and enhance it according to your requirements!*
-```
